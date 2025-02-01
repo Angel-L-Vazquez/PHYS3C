@@ -1,0 +1,162 @@
+%! Author = angel
+%! Date = 1/28/25
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage{ circuitikz }
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+
+% Document
+\begin{document}
+\noindent \textbf{Chapter 16 - Waves I}
+\newline
+\newline
+    There are three main types of waves:
+    \begin{enumerate}
+        \item \textbf{Mechanical waves:} governed by Newton's laws, and can only exist
+              within physical materials,
+              \newline associated with water, sound and seismic waves
+
+        \item \textbf{Electromagnetic waves:} requires no physical medium, and travel at speed c ($3 \times 10^8$ m/s) in a vacuum,
+         associated with light, microwaves, and x-rays
+        \item \textbf{Matter waves:} associated with electrons, protons, atoms and matter
+    \end{enumerate}
+
+    \noindent However waves are further classified into how they displace the medium they travel in.
+    Imagine a rope with one end in your hand and the other tied to a pole.
+   When you move your hand up and down in a harmonic motion,
+    the rope forms in the shape of wave as it travels along its length.
+
+\begin{figure}[!ht]
+    \centering
+    \resizebox{0.4\textwidth}{!}{%
+        \begin{circuitikz}
+            \tikzstyle{every node}=[font=\LARGE]
+            \begin{scope}[rotate around={-1.5:(8.75,11.5)}]
+                \draw[domain=8.75:18,samples=100,smooth, line width=1.8pt] plot (\x,{1*sin(1*\x r -8.75 r ) +11.5});
+            \end{scope}
+            \draw [ line width=1.8pt](18,12.75) to[short] (18,10.25);
+            \draw [ color={rgb,255:red,4; green,50; blue,255}, line width=0.8pt, ->, >=Stealth] (8.75,11.5) -- (8.75,12.75);
+            \draw [ color={rgb,255:red,255; green,38; blue,0}, line width=0.8pt, ->, >=Stealth] (8.75,11.5) -- (8.75,10.25);
+            \node at (8.75,11.5) [circ] {};
+            \draw [ color={rgb,255:red,255; green,64; blue,255}, line width=0.8pt, ->, >=Stealth] (10.25,13.25) -- (11.25,13.25);
+            \node [font=\LARGE, color={rgb,255:red,255; green,64; blue,255}] at (10.5,13.75) {};
+            \node [font=\LARGE, color={rgb,255:red,255; green,64; blue,255}] at (10.75,13.75) {\textbf{v}};
+        \end{circuitikz}
+    }%
+
+    \label{fig:my_label}
+\end{figure}
+
+    \noindent In the case of the rope, the motion is a \textbf{transverse wave}, where the displacement of the medium is perpendicular to the direction the wave travels.
+    This transverse wave is also a sinusoidal wave where we can find the displacement in the positive $x$ direction modeled by the \textbf{sinusoidal function}:
+
+
+    \begin{equation}
+       \underbrace{y(x,t)}_{\text{\clap{displacement~}}} = \overbrace{y_m}^{\text{\clap{amplitude~}}} sin(\underbrace{kx - \omega t + \phi}_{\text{\clap{phase~}}})\label{eq:equation}
+    \end{equation}
+
+    \newline
+
+
+\begin{tikzpicture}
+  \begin{axis}[
+    trig format plots=rad,
+    axis lines = middle,
+    enlargelimits,
+    clip=false,
+    xtick=\empty, % Remove x-axis numbers
+    ytick=\empty  % Remove y-axis numbers
+    ]
+    \addplot[domain=-0.99*pi:2*pi,samples=200,black] {sin(x)};
+    \addplot[domain=-2*pi:-1.07*pi,samples=200,black] {sin(x)};
+    \draw[dotted,purple,<->] (axis cs: 0.5*pi,1) --  node[above,text=purple,font=\footnotesize]{$y_m$}(axis cs: 0.5*pi,0);
+    \draw[dashed,red,<->] (axis cs: 0.5*pi,1.0) -- node[above,text=red,font=\footnotesize]{$\lambda$}(axis cs: -1.5*pi,1.0);
+
+    \draw[dashed,blue,<->] (axis cs: -2*pi,0) -- node[above,text=blue,font=\footnotesize]{$T$}(axis cs: 0,0);
+  \end{axis}
+\end{tikzpicture}
+\hfill
+\begin{minipage}[b]{0.5\textwidth}
+    Where:
+    \begin{itemize}
+        \item $y(x,t)$: displacement (m)
+        \item $y_m$: amplitude (m)
+        \item $\lambda$: wavelength (m)
+        \item $f$: frequency (Hz)
+        \item $T$: period ($s$)
+        \item $\omega$: angular frequency ($rad/s$)
+        \item $k$: wave number ($m^-^1$)
+        \item $\phi$: phase constant ($rad$)
+        \end{itemize}
+\end{minipage}
+ \newline
+\newline
+    \noident Useful formulas:
+\begin{equation}
+    k = \frac{2\pi}{\lambda} \tag{angular wave number}
+\end{equation}
+\begin{equation}
+    f = \frac{1}{T} = \frac{\omega}{2\pi} \tag{frequency}
+\end{equation}
+\begin{equation}
+    v = \frac{\omega}{k} = \frac{\lambda}{T} = \lambda f \tag{wave velocity}
+\end{equation}
+
+\newpage
+    \noindent Conversely, \textbf{longitudinal waves} displace the medium parallel to the wave’s direction
+
+\begin{figure}[!ht]
+    \centering
+    \resizebox{0.5\textwidth}{!}{%
+        \begin{circuitikz}
+            \tikzstyle{every node}=[font=\LARGE]
+
+            % Wall representation
+            \draw [line width=2pt] (18,14) -- (18,10);
+
+            % Velocity purple arrow
+            \draw [color={rgb,255:red,255; green,64; blue,255}, line width=1pt, ->, >=Stealth]
+            (10.5,13.5) -- (12,13.5);
+            \node [font=\LARGE, color={rgb,255:red,255; green,64; blue,255}]
+            at (11.3,14) {\textbf{v}};
+
+            % Side-to-side particle movement arrows
+            \draw [color={rgb,255:red,4; green,50; blue,255}, line width=1pt, ->, >=Stealth]
+            (5.5,12) -- (6.5,12); % Blue left arrow
+            \draw [color={rgb,255:red,255; green,38; blue,0}, line width=1pt, ->, >=Stealth]
+            (5.5,12) -- (4.5,12); % Red right arrow
+
+            % Compression region (three times as dense in the middle)
+            \foreach \x in {5.5, 6, 6.25, 6.5, 6.75, 7,7.1, 7.2, 7.25, 7.3, 7.4, 7.5, 7.6, 7.75, 8, 8.25, 8.5, 8.75, 9, 9.25, 9.5} {
+                \draw [short, line width=0.8pt] (\x,12.5) -- (\x,11);
+            }
+
+            % Rarefaction region: sparse vertical lines
+            \foreach \x in {9.75, 10,10.25, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 13.75, 14,14.25, 14.5, 14.75} {
+                \draw [short, line width=0.8pt] (\x,12.5) -- (\x,11);
+            }
+
+            % Compression again near wall
+            \foreach \x in {14.9, 15, 15.1, 15.2,15.3,15.35,15.4, 15.5, 15.75, 16, 16.25, 16.5, 17, 17.5} {
+                \draw [short, line width=0.8pt] (\x,12.5) -- (\x,11);
+            }
+
+        \end{circuitikz}
+    }%
+    \label{fig:longitudinal_wave}
+\end{figure}
+
+    \noindent For example, a speaker playing music displaces air by moving its diaphragm back and forth.
+    This forward movement pushes air creating an area of compression.
+    When it moves back, it creates a new area where air is spread out, called rarefaction.
+
+
+
+\end{document}
