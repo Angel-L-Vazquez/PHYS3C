@@ -159,9 +159,9 @@ Now, imagine a rope with one end in your hand and the other tied to a pole.
         \mu = \frac{m}{l} \tag{linear density}
     \end{equation}
     Where $m$ is the mass of the string, and $l$ is the length of the string.
-    With linear density, now we can find the \textbf{velocity.}
+    With linear density and the tension force, now we can find the \textbf{velocity.}
     \begin{equation}
-        v = \sqrt {\frac{T}{\mu}} \tag{wave velocity}
+        v = \sqrt {\frac{F_T}{\mu}} \tag{wave velocity}
     \end{equation}
     Linear density $\mu$ can also be used to find the \textbf{average power:}
     \begin{equation}
@@ -179,6 +179,9 @@ Now, imagine a rope with one end in your hand and the other tied to a pole.
     \begin{equation}
         v = \frac{\omega}{k} = \frac{\lambda}{T} = \lambda f \tag{wave velocity}
     \end{equation}
+    \begin{align}
+        \hspace*{4cm} u = \frac{\partial y}{\partial t} = -\omega y_m\cos(kx-\omega t)\tag{transverse velocity}
+    \end{align}
     \begin{equation}
         \frac{\partial^2 y}{\partial x^2} = \frac{1}{v^2} \frac{\partial^2 y}{\partial t^2} \tag{wave equation}
     \end{equation}
@@ -236,7 +239,7 @@ Now, imagine a rope with one end in your hand and the other tied to a pole.
             (axis cs: 4.95,1.3) -- node[above,text=red,font=\footnotesize]{$$}
             (axis cs: 6.1,1.3);
 
-            \addplot[dotted,name path=F, line width=0.3mm, color=blue, domain={0:12}, samples=100]
+            \addplot[dotted,line width=0.3mm, color=blue, domain={0:12}, samples=100]
                 {(2*pow(2,-1*pow(x-5.5,2)))};
 
             \addplot[line width=0.3mm, color=green, domain={0:12}, samples=100]
@@ -245,7 +248,7 @@ Now, imagine a rope with one end in your hand and the other tied to a pole.
             (axis cs: 4.95,2.3) -- node[above,text=red,font=\footnotesize]{$$}
             (axis cs: 6.1,2.3);
 
-            \addplot[dotted, name path=G, line width=0.3mm, color=red, domain={0:12}, samples=100]
+            \addplot[dotted, line width=0.3mm, color=red, domain={0:12}, samples=100]
                 {(pow(2,-1*pow(x-5.5,2)))};
         \end{axis}
     \end{tikzpicture}
@@ -267,14 +270,14 @@ Now, imagine a rope with one end in your hand and the other tied to a pole.
             (axis cs: 1,2.3) -- node[above,text=red,font=\footnotesize]{$$}
             (axis cs: 2.4,2.3);
 
-            \addplot[name path=F, line width=0.3mm, color=red, domain={5:12}, samples=100]
+            \addplot[line width=0.3mm, color=red, domain={5:12}, samples=100]
                 {(pow(2,-1*pow(x-9,2)))};
 
             \draw[red,->]
             (axis cs: 8,1.3) -- node[above,text=red,font=\footnotesize]{$$}
             (axis cs: 9.4,1.3);
 
-            \addplot[name path=G, line width=0.3mm, color=blue, domain={0:5}, samples=100]
+            \addplot[line width=0.3mm, color=blue, domain={0:5}, samples=100]
                 {(2*pow(2,-1*pow(x-2,2)))};
         \end{axis}
     \end{tikzpicture}
@@ -452,10 +455,10 @@ Now, imagine a rope with one end in your hand and the other tied to a pole.
     \end{equation}
     Where  $y'_{mh}$ is the horizontal component and $y'_{mv}$ is the vertical component
     \begin{equation}
-        y'_{mh} = y_{m1}cos(0) + y_{m2}\cos(\phi) \notag
+        y'_{mh} = y_{m1}\cos(0) + y_{m2}\cos(\phi) \notag
     \end{equation}
     \begin{equation}
-        y'_{mv} = y_{m1}sin(0) + y_{m2}\sin(\phi) \notag
+        y'_{mv} = y_{m1}\sin(0) + y_{m2}\sin(\phi) \notag
     \end{equation}
 
     \noindent In fact we can simplify this equation to:
