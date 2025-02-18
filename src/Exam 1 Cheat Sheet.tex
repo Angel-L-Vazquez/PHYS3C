@@ -70,7 +70,7 @@
         v = \frac{\omega}{k} = \frac{\lambda}{T} = \lambda f \tag{wave velocity}
     \end{equation}
     \begin{equation}
-        k = \frac{2\pi}{\lambda} \tag{angular wave number}
+        k = \frac{2\pi}{\lambda} = \frac{\omega}{v} \tag{angular wave number}
     \end{equation}
     \end{minipage}
     \begin{minipage}[t]{0.46\textwidth}
@@ -82,7 +82,7 @@
         v = \sqrt {\frac{F_T}{\mu}} \tag{wave velocity}
     \end{equation}
     \begin{equation}
-        P_{avg} = \frac{1}{2} \mu v \omega^2 y_m \tag{average power}
+        P_{avg} = \frac{1}{2} \mu v \omega^2 y_m^2 \tag{average power}
     \end{equation}
     \end{minipage}
 
@@ -128,7 +128,7 @@
         \item $p$ is pressure (Pa)
         \item $\rho$ is air density (kg/m$^3$)
         \item $\beta$ is sound level (dB)
-        \item $I$ is intensity (W/m$^2$)
+        \item $I$ is intensity/average power (W/m$^2$)
     \end{itemize}
     \noindent Pressure equations:
     \begin{equation}
@@ -139,7 +139,7 @@
     \end{equation}
     \noindent Intensity equations:
     \begin{equation}
-        I = \frac{1}{2} \rho v \omega^2 s_{m}^2 \tag{intensity}\label{eq:intensity}
+        I = \frac{1}{2} \rho v \omega^2 s_{m}^2 = \frac{(\Delta p_m)^2}{2 \rho v} \tag{intensity}\label{eq:intensity}
     \end{equation}
     \begin{equation}
         I = \frac{P_s}{4 \pi r^2} \tag{intensity at distance r}
@@ -148,6 +148,9 @@
     \noindent Sound level:
     \begin{equation}
         \beta = (10 \text{dB}) \log \frac{I}{I_0} \tag{sound level}
+    \end{equation}
+    \begin{equation}
+        \Delta  \beta = (10 \text{dB}) \log \frac{I_2}{I_1} \tag{sound level}
     \end{equation}
     \noindent Doppler Effect (pos/neg if moving toward, neg/pos if moving away):
     \begin{equation}
@@ -164,7 +167,7 @@
         \phi = (2m+1)\pi \text{ or } \frac{\Delta L}{\lambda} = 0.5,1.5,2.5,... \tag{fully destructive}
     \end{equation}
 
-    \noindent beats:
+    \noindent beats (higher frequency when tight):
     \begin{equation}
         f_{beat} = \left |f_1 - f_2 \tag{beat frequency} \right|
     \end{equation}
