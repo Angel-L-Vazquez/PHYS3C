@@ -1,0 +1,193 @@
+%! Author = angel
+%! Date = 2/17/25
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz-cd}
+
+\usetikzlibrary{decorations.markings, arrows.meta}
+% Document
+\tikzset{
+    marrow/.style={decoration={markings,mark=at position 0.5 with {\arrow{#1}}}, postaction=decorate}
+}
+% Document
+\begin{document}
+    \noindent \textbf{PHYS 3C Exam 1: Chapter 16 - Waves I}
+    \begin{equation}
+        \underbrace{y(x,t)}_{\text{\clap{displacement~}}} = \overbrace{y_m}^{\text{\clap{amplitude~}}} sin(\underbrace{kx - \omega t + \phi}_{\text{\clap{phase~}}})
+        \tag{displacement} \label{eq:equation}
+    \end{equation}
+
+    \begin{tikzpicture}
+        \begin{axis}[
+            trig format plots=rad,
+            axis lines = middle,
+            enlargelimits,
+            clip=false,
+            xtick=\empty, % Remove x-axis numbers
+            ytick=\empty  % Remove y-axis numbers
+        ]
+            \addplot[domain=-0.99*pi:2*pi,samples=200,black] {sin(x)};
+            \addplot[domain=-2*pi:-1.07*pi,samples=200,black] {sin(x)};
+            \draw[dotted,purple,<->] (axis cs: 0.5*pi,1) --  node[above,text=purple,font=\footnotesize]{$y_m$}(axis cs: 0.5*pi,0);
+            \draw[dashed,red,<->] (axis cs: 0.5*pi,1.0) -- node[above,text=red,font=\footnotesize]{$\lambda$}(axis cs: -1.5*pi,1.0);
+
+            \draw[dashed,blue,<->] (axis cs: -2*pi,0) -- node[above,text=blue,font=\footnotesize]{$T$}(axis cs: 0,0);
+        \end{axis}
+    \end{tikzpicture}
+    \hfill
+    \begin{minipage}[b]{0.5\textwidth}
+        Where:
+        \begin{itemize}
+            \item $y(x,t)$: displacement ($m$)
+            \item $y_m$: amplitude ($m$)
+            \item $\lambda$: wavelength ($m$)
+            \item $f$: frequency ($Hz$)
+            \item $T$: period ($s$)
+            \item $\omega$: angular frequency ($rad/s$)
+            \item $k$: wave number ($m^{-1}$)
+            \item $\phi, \beta$: phase constant ($rad$)
+        \end{itemize}
+    \end{minipage}
+    \newline
+
+    \begin{minipage}[t]{0.5\textwidth}
+    \noindent Addition formulas:
+
+    \begin{equation}
+        f = \frac{1}{T} = \frac{\omega}{2\pi} \tag{frequency}
+    \end{equation}
+    \begin{equation}
+        v = \frac{\omega}{k} = \frac{\lambda}{T} = \lambda f \tag{wave velocity}
+    \end{equation}
+    \begin{equation}
+        k = \frac{2\pi}{\lambda} \tag{angular wave number}
+    \end{equation}
+    \end{minipage}
+    \begin{minipage}[t]{0.46\textwidth}
+    \noindent For a String:
+    \begin{align}
+        \mu = \frac{m}{l} \tag{linear density}
+    \end{align}
+    \begin{equation}
+        v = \sqrt {\frac{F_T}{\mu}} \tag{wave velocity}
+    \end{equation}
+    \begin{equation}
+        P_{avg} = \frac{1}{2} \mu v \omega^2 y_m \tag{average power}
+    \end{equation}
+    \end{minipage}
+
+\noindent Finding Nodes and Antinodes (where n is 0,1,2,...):
+    \begin{equation}
+        x = n \frac{\lambda}{2} \tag{node position}
+    \end{equation}
+    \begin{equation}
+        x = (n + \frac{1}{2})\frac{\lambda}{2} \tag{antinode position}
+    \end{equation}
+
+    \noindent Finding Resonance (n is a harmonic number/antinode):
+    \begin{equation}
+        f = \frac{v}{\lambda} = n \frac{v}{2L} \tag{Resonant frequency}
+    \end{equation}
+    \begin{equation}
+        \lambda = \frac{2L}{n} \tag{wavelength \lambda}
+    \end{equation}
+
+    \noindent Wave Superposition using Phasors
+    \begin{equation}
+        y'_{mh} = y_{m1}\cos(0) + y_{m2}\cos(\phi) \notag
+    \end{equation}
+    \begin{equation}
+        y'_{mv} = y_{m1}\sin(0) + y_{m2}\sin(\phi) \notag
+    \end{equation}
+
+    \begin{equation}
+        y'_{m} = \sqrt{(y'_{mh})^2 + (y'_{mv})^2} \tag{net amplitude}
+    \end{equation}
+    \begin{equation}
+        \beta = \tan^{-1}({\frac{y'_{mv}}{y'_{mh}}}) \tag{net phase constant}
+    \end{equation}
+
+    \newpage
+    \noindent \textbf{PHYS 3C Exam 1: Chapter 17 - Waves II}
+    \begin{equation}
+        s(x,t) = s_m\cos(kx - \omega t + \phi) \tag{sound equation}
+    \end{equation}
+    \noindent Where:
+    \begin{itemize}
+        \item $s_m$ is the displacement amplitude (m)
+        \item $p$ is pressure (Pa)
+        \item $\rho$ is air density (kg/m$^3$)
+        \item $\beta$ is sound level (dB)
+        \item $I$ is intensity (W/m$^2$)
+    \end{itemize}
+    \noindent Pressure equations:
+    \begin{equation}
+        \Delta p = \Delta p_m \sin(kx - \omega t) \tag{pressure change}
+    \end{equation}
+    \begin{equation}
+        \Delta p_m = (v \rho \omega)s_m \tag{pressure amplitude}
+    \end{equation}
+    \noindent Intensity equations:
+    \begin{equation}
+        I = \frac{1}{2} \rho v \omega^2 s_{m}^2 \tag{intensity}\label{eq:intensity}
+    \end{equation}
+    \begin{equation}
+        I = \frac{P_s}{4 \pi r^2} \tag{intensity at distance r}
+    \end{equation}
+
+    \noindent Sound level:
+    \begin{equation}
+        \beta = (10 \text{dB}) \log \frac{I}{I_0} \tag{sound level}
+    \end{equation}
+    \noindent Doppler Effect (pos/neg if moving toward, neg/pos if moving away):
+    \begin{equation}
+        f' = f \frac{v \pm v_o}{v \mp v_s }  \tag{Doppler Effect}\label{doppler}
+    \end{equation}
+    \noindent Wave interference:
+    \begin{equation}
+        \phi = \frac{\Delta L}{\lambda} 2 \pi \tag{phase difference}
+    \end{equation}
+    \begin{equation}
+        \phi = m(2\pi) \text{ or } \frac{\Delta L}{\lambda} = 0,1,2,... \tag{fully constructive}
+    \end{equation}
+    \begin{equation}
+        \phi = (2m+1)\pi \text{ or } \frac{\Delta L}{\lambda} = 0.5,1.5,2.5,... \tag{fully destructive}
+    \end{equation}
+
+    \noindent beats:
+    \begin{equation}
+        f_{beat} = \left |f_1 - f_2 \tag{beat frequency} \right|
+    \end{equation}
+
+    \noindent Resonance:
+
+    \begin{minipage}[t]{0.5\textwidth}
+        \noindent Both ends open:
+    \begin{align}
+        \hspace*{0.8cm} \lambda = \frac{2L}{n} \hspace{0.5cm} \tag{wavelength}
+    \end{align}
+    \begin{equation}
+        f = \frac{nv}{2L} \tag{resonance}
+    \end{equation}
+    \end{minipage}
+    \begin{minipage}[t]{0.5\textwidth}
+        \noindent One end closed:
+        \begin{align}
+            \hspace*{0.8cm} \lambda = \frac{4L}{n} \hspace{0.5cm} \tag{wavelength}
+        \end{align}
+        \begin{equation}
+            f = \frac{nv}{4L} \tag{resonance}
+        \end{equation}
+        \end{minipage}
+
+\end{document}
