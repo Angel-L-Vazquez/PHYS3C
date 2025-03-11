@@ -40,12 +40,12 @@
     \noindent Temperature affects the phyiscal properties of an object, such as heat causing metal to expand.
     We can calculate the change in length over a change in temperature ($\celsius$ or K):
     \begin{equation}
-        \Delta L = L \alpha \Delta T
+        \Delta L = L \alpha \Delta T \tag{linear expansion}
     \end{equation}
     \noindent Where $\alpha$ and $ \beta = 3\alpha$ is the coefficient of linear expansion ($\celsius^{-1}$).
     For a change in volume we use:
     \begin{equation}
-        \Delta V = V \beta \Delta T
+        \Delta V = V \beta \Delta T \tag{volume expansion}
     \end{equation}
     \noindent Now if we have an object in an environment, such as an iced soda can outside in the sun,
     its temperature rises quickly at first, but then the soda's temperature increasing rate slows down
@@ -94,7 +94,7 @@
                 an object reaches melting or vaporizing point where it will need more energy to change states.
                 The latent heat L (cal/g or J/kg) of a material is the amount of energy required to change states:
                 \begin{equation}
-                     Q = mL
+                     Q = mL \tag{latent heat}
                 \end{equation}
             \end{minipage}
 
@@ -103,38 +103,38 @@
     Aside from heat, Calories and British thermal units (Btu) measure the amount of energy that would raise the temperature of 1g of water
     from $14.5\celsius$ to $15.5\celsius$ and 1 lb of water from $63\fahrenheit$ to $64\fahrenheit$ respectively.
     \begin{equation}
-        1 \text{ cal} = 3.968 \times 10^{-3} \text{ Btu }= 4.1868 \text{ J}
+        1 \text{ cal} = 3.968 \times 10^{-3} \text{ Btu }= 4.1868 \text{ J} \notag
     \end{equation}
 
     \noindent With this, we can find the amount of heat used during a change of temperature,
     given the heat capacity C (J/K) of an object.
     \begin{equation}
-        Q = C \Delta T = C(T_f - T_i)
+        Q = C \Delta T = C(T_f - T_i) \tag{heat capacity}
     \end{equation}
     However, the heat capacity is different for every system, depending on the material of an object, and its mass.
     The heat capacity is the product of the heat specific heat c ($\frac{J}{kg \cdot K}$) and its mass.
     With this, the specific heat unit conversions are now:
      \begin{equation}
-          1 \text{ cal/g} = 3.968 \times 10^{-3} \text{ Btu/lb }= 4.1868 \text{ J/(K $\times$ kg)}
+          1 \text{ cal/g} = 3.968 \times 10^{-3} \text{ Btu/lb }= 4.1868 \text{ J/(K $\times$ kg)} \notag
     \end{equation}
     \noindent Now we can find heat used over a change of temperature given the specific heat constant and mass:
     \begin{equation}
-        Q = cm \Delta T = cm(T_f - T_i)
+        Q = cm \Delta T = cm(T_f - T_i) \tag{specific heat}
     \end{equation}
     \noindent Remembering that heat is energy, we can use Power ($W = \frac{J}{s}$) and time:
     \begin{equation}
-        Q = Pt
+        Q = Pt \tag{power}
     \end{equation}
 
     \newpage
     \noindent \textbf{Chapter 18: The First Law of Thermodynamics}
     \\ \noindent \newline As energy can neither be created nor destroyed, the first Law of Thermodynamics states:
     \begin{equation}
-        \Delta E_{int} = E_f - E_i = Q - W
+        \Delta E_{int} = E_f - E_i = Q - W \tag{first law}
     \end{equation}
     \noindent And if the system undergoes differential change:
     \begin{equation}
-        dE = dQ - dW
+        dE = dQ - dW \tag{first law}
     \end{equation}
     The principle of energy conservation shows that the change of our internal energy in the system ($\Delta E_{int}$)
     is found by heat added to system Q while removing the work done by the system.
@@ -143,7 +143,7 @@
     Now if your phone was playing a movie, it expends energy, causing work by your phone (system).
     With this in mind, we can start working with how gas can exchange energy with its surroundings through work:
     \begin{equation}
-        W = \int dW = \int_{v_i}^{v_f} p \text{ } dV
+        W = \int dW = \int_{v_i}^{v_f} p \text{ } dV \tag{work}
     \end{equation}
     In a system such as an engine, a piston will compress gas in the engine, doing work on the system by
     causing a change in volume.
@@ -202,7 +202,7 @@
     so we will use the line formula to give us this integral:
     \begin{equation}
         W_{AB} = \int_{\frac{1}{4}V_s}^{V_s} \frac{10}{3} + \frac{20}{3}V dV
-        = 60 J
+        = 60 J \notag
     \end{equation}
     Now the net work $W_{net} = W_{AB} + W_{BC} + W_{CA}$ which gives us $-30J.$
     Given that $\Delta E_{int} = - W = 30J$,
@@ -226,4 +226,49 @@
     \begin{equation}
         \Delta E_{int} = 0 \tag{Free expansions}
     \end{equation}
+
+    \newpage
+    \noindent \textbf{Chapter 18: The First Law of Thermodynamics}
+    \\ \noindent \newline If we leave the iced soda can outside,
+    the energy is transferred from the outside environment to the inside
+    through \textbf{conduction} (W):
+    \begin{equation}
+        P_{cond} = \frac{Q}{t} = kA\cdot \frac{\Delta T}{L} \tag{conduction}
+    \end{equation}
+    \noindent Where $k$ is the conductivity of your material,
+    $A$ is the area of the barrier, and $L$ is the length.
+    As with conduction we can also measure the resistance,
+    or how good a material at a specific length is at insulating heat:
+    \begin{equation}
+        R = \frac{L}{K} \tag{resistance}
+    \end{equation}
+    \noindent Sometimes there will be multiple layers of a different materials
+    between hot and cold areas. We can use the resistance of each material
+    to measure the whole energy transfer rate:
+    \begin{equation}
+        P_{cond} = \frac{A \Delta T}{\Sigma \frac{L}{K} } \tag{conduction}
+    \end{equation}
+    \noindent If we have a candle in a cold environment,
+    we can feel the heat radiating out of the candle.
+    This energy transfer is \textbf{thermal radiation}
+    which is when energy is exchanged through electromagnetic waves.
+    The rate at the energy is emitted by the system is given by:
+    \begin{equation}
+        P_{rad} = \alpha \epsilon A T_{obj}^4 \tag{radiation rate}
+    \end{equation}
+    \noindent Here, the temperature of the object is in Kelvin,
+    $\alpha = 5.6704 \times 10^8 W/m^2\cdot K^4$ is the Stefan–Boltzmann constant
+    and $\epsilon$ is the emissivity of the object’s surface.
+    However, an object can also absorb thermal radiation:
+    \begin{equation}
+        P_{abs} = \alpha \epsilon A T_{env}^4 \tag{absorption rate}
+    \end{equation}
+    With this we can find the net power transfer where a positive value
+    signifies energy is absorbed while a negative value shows that energy is lost:
+    \begin{equation}
+        P_{net} = P_{abs} - P_{rad} = \alpha \epsilon A (T_{env}^4 - T_{obj}^4) \tag{net power}
+    \end{equation}
+    
+
+
 \end{document}
