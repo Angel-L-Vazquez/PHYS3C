@@ -13,6 +13,7 @@
 \usepackage{fancyhdr}
 \pgfplotsset{compat=1.18}
 \usepackage{tikz-cd}
+\usepackage{booktabs}
 
 \usetikzlibrary{decorations.markings, arrows.meta}
 % Document
@@ -25,8 +26,172 @@
 
 % Document
 \begin{document}
-    \noindent \textbf{Chapter }% Document
+    \noindent \textbf{Chapter 19: Kinetic Theory of Gases}
+    \\ \noindent \newline Gases consist of atoms that take up space, applying pressure within a volume.
+    Since these atoms move around, we can assign them a temperature as well.
+    To work on this atomic level, it is best to work in terms of moles,
+    where we can use \textbf{Avogadro's number} (mol$^{-1}$):
+    \begin{equation}
+        N_A = 6.02 \times 10^{23} \text{ mol}^{-1} \tag{Avogadro's number}
+        \end{equation}
+    \noindent To find the amount of \textbf{moles} $n$, we would need to find the ratio
+    between the amount of \textbf{molecules} $N$ and Avogadro's number:
+    \begin{equation}
+       n = \frac{N}{N_A} \tag{moles}
+    \end{equation}
+    \noindent We can also use the mass of the sample M$_{\text{sam}}$ (g)
+    with the molar mass M (mol, mass of a single mole) or molecular mass $m$ (g, the mass of a single molecule):
+    \begin{equation}
+        n = \frac{M_{\text{sam}}}{M} = \frac{M_{\text{sam}}}{mN_A} \tag{moles}
+    \end{equation}
+    \noindent Take special note, a mol is \textbf{not} the same as a molecule.
+    A mol measures a specific amount, usually atoms or molecules, in the same as a dozen measures a quantity,
+    while a molecule refers to a group of atoms chemically bonded such as H$_2$O.
 
 
+    \noindent \\Through experimentation, scientists found that at low enough densities,
+    all gases follow this relation:
+    \begin{equation}
+        pV = nRT \tag{Ideal Gas Law}
+    \end{equation}
+    where $p$ is absolute pressure Pa, $V$ is volume, $n$ is the number of moles,
+    $R$ is the gas constant, and $T$ is the temperature in Kelvin.
+    \begin{equation}
+        R = 8.31\text{ } J / (mol \cdot K) \tag{gas constant}
+    \end{equation}
+    We can rewrite the gas law formula to get it in terms of molecules $n$:
+    \begin{equation}
+        pV = NkT \tag{Ideal Gas Law}
+    \end{equation}
+    Where k is the Boltzmann constant:
+    \begin{equation}
+         k = \frac{R}{N_A} = 1.38 \times 10^{-23} J/K \tag{Boltzmann constant}
+    \end{equation}
+    Now lets take a look when the temperature is constant,
+    which is an \textbf{isothermal process.}
+    When finding work, we find:
+        \begin{equation}
+            W = nRT\ln\frac{V_f}{v_i} \tag{ideal gas, isothermal process}
+        \end{equation}
+    Holding volume gives us:
+    \begin{equation}
+        W = 0 \tag{constant-volume process}
+    \end{equation}
+    Holding pressure yields:
+    \begin{equation}
+        W = p \Delta V \tag{constant-pressure process}
+    \end{equation}
 
+    If we take a closer look into the properties of gas,
+    we see that the molecules move in all directions with differing speeds,
+    bumping into each other, and into the walls of its confined space.
+    To find the average speed of a given set of molecules:
+    \begin{equation}
+        v_{avg} = \frac{\sum v_i}{N} \tag{average}
+    \end{equation}
+    Since these molecules are moving at wildly different speeds,
+    the average velocity is not enough, so finding the root-square means
+    will give us a more meaningful average speed:
+    \begin{equation}
+        v_{\text{rms}} = \sqrt{\frac{\sum V_i^2}{N}} \tag{v_{\text{rms}}}
+    \end{equation}
+    As each molecule carries energy moving around in a confined space,
+    at any instant its translational kinetic energy is $\frac{1}{2}mv^2$
+    when it bumps into another molecule.
+    Its average translational kinetic energy over time is:
+    \begin{equation}
+        K_{avg} = \frac{1}{2} mv_{rms}^2 \tag{average kinetic energy}
+    \end{equation}
+    Substituting out $v_{rms}$ we find:
+    \begin{equation}
+        K_{avg} = \frac{3}{2} kT \tag{average kinetic energy}
+    \end{equation}
+    Continuing the motion of molecules,
+    the movement of any given molecule appears chaotic,
+    changing paths and speeds as it collides with other particles.
+    However, the distance between collisions is linear at a constant velocity
+    known as a mean free path:
+    \begin{equation}
+        \lambda = \frac{1}{\sqrt{2} \pi d^2 N/V} \tag{mean free path}
+    \end{equation}
+    Where $d$ is the diameter of a molecule,
+    and $N/V$ is the number of molecules per per unit volume (density of molecules).
+    So far we have a general idea of how the molecular speeds,
+    however we can find the distribution, using Maxwell’s speed distribution law:
+    \begin{equation}
+        P(v) = 4 \pi (\frac{M}{2 \pi RT})^{3/2} \cdot v^2 e^{-Mv^2/2RT} \tag{distribution}
+    \end{equation}
+    Graphing this gives us a curve, where we can use the total area under the curve
+    as a fraction for the molecular speeds:
+    \begin{equation}
+        \int_{0}^{\infty} P(v) \text{ } dv = 1
+    \end{equation}
+    Now we can solve for each of the speeds, Where temperature is in kelvin,
+    and $M$ is molar mass ($kg/mol$):
+    \begin{equation}
+        v_{avg} = \int_{0}^{\infty} v P(v) \text{ } dv = \sqrt{\frac{8RT}{\pi M}}
+    \end{equation}
+    \begin{equation}
+    (v)^2_{avg} = \int_{0}^{\infty} v^2 P(v) \text{ } dv = \frac{3RT}{ M} \Rightarrow v_{rms} = \sqrt{\frac{3RT}{M}}
+    \end{equation}
+    The most probable speed gives us the speed where $P(v)$ is at its max.
+    \begin{equation}
+        v_p = \sqrt{\frac{2RT}{M}}
+    \end{equation}
+    \newpage
+    Whe find that gasses can either be monatomic, diatomic or polyatomic, which relates to
+    how many atoms a given gas molecule has.
+    Knowing heat is related to temperature change:
+    \begin{equation}
+        Q = nC \Delta T 
+    \end{equation}
+    Where we can use the molar specific heat at a constant pressure $C_p$ or
+    at a constant volume $C_v$:
+    \begin{equation}
+        C_v = \frac{f}{2} R
+    \end{equation}
+    $f$ refers to the degrees of freedom a gas has.
+    For monatomic gasses $f = 3$, and for diatomic gasses $f =5$.
+    With this we can find the change in internal energy for any ideal gas.
+    \begin{equation}
+        \Delta E_{int} = nC_{\text{v}} \Delta T \tag{ideal gas, all processes}
+    \end{equation}
+    Rewriting the first law of thermodynamics nets us:
+    \begin{equation}
+        W = p \Delta V = nR \Delta T
+    \end{equation}
+    So we can solve for $C_p$:
+    \begin{equation}
+        C_p = C_v + R
+    \end{equation}
+    In an Adiabatic expansion of a gas, $Q = 0$.
+    This gives the relation:
+    \begin{equation}
+        pV^{\gamma} = \text{a constant} \tag{adiabatic process}
+    \end{equation}
+    Where $\gamma = C_p/C_v$, which another relation is formed:
+    \begin{equation}
+        p_i V_i^{\gamma} = p_f V_f^{\gamma} \tag {adiabatic process}
+    \end{equation}
+    Free expansion, no change in temperature, also nets a similar result:
+    \begin{equation}
+        p_i V_i = p_f V_f \tag {free expansion}
+    \end{equation}
+
+    \noindent Now we can summarize each of the 4 special cases:
+    \begin{table}[h]
+        \centering
+\renewcommand{\arraystretch}{1.5}
+        \begin{tabular}{lp{3cm}lp{6cm}l}
+            \toprule
+            \textbf{Process} & \textbf{Constant} & \textbf{Special Results} \\
+            \midrule
+            All & &  $\Delta E_{int} = Q - W$ and $\Delta E_{int} = n C_v \Delta T$\\
+            Isobaric  & p  & $Q = nC_p \Delta T$, $W = p \Delta V$\\
+            Isothermal & T  & $Q = W = nRT \ln (\frac{v_f}{v_i}) $, $\Delta E_{int} = 0$ \\
+            Adiabatic & $pV^{\gamma}$,$TV^{\gamma - 1}$ & $Q = 0$, $W = - \Delta E_{int} $ \\
+            Isochoric & V  & $Q = \Delta E_{int} = n C_v \Delta T$, $W = 0$ \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
 \end{document}

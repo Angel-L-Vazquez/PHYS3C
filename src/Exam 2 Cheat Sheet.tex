@@ -1,0 +1,216 @@
+%! Author = angel
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage{pgfplots}
+\usepackage{gensymb}
+\usepackage{tikz}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz-cd}
+\usepackage{booktabs}
+
+\usetikzlibrary{decorations.markings, arrows.meta}
+% Document
+\tikzset{
+    marrow/.style={decoration={markings,mark=at position 0.5 with {\arrow{#1}}}, postaction=decorate}
+}
+
+
+\newcommand{\fahrenheit}{\degree \text{F}}
+
+% Document
+\begin{document}
+    \noindent \textbf{Cheese Sheet for Exam 2}% Document
+    \\ \noindent \newline Temperature:
+
+
+        \begin{minipage}{0.46\textwidth}
+            \begin{equation}
+                T_C = T_K - 273.15 \tag{Celsius}
+            \end{equation}
+        \end{minipage}
+        \begin{minipage}{0.5\textwidth}
+            \begin{equation}
+                T_F = \frac{9}{5}T_C + 32 \tag{Fahrenheit}
+            \end{equation}
+        \end{minipage}
+
+    \noindent \\ Physical Expansion Where $\alpha$ and $ \beta = 3\alpha$ are the coefficient of linear expansion:
+
+    \begin{minipage}{0.46\textwidth}
+
+        \begin{equation}
+            \Delta V = V \beta \Delta T \tag{volume expansion}
+        \end{equation}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \begin{equation}
+            \Delta L = L \alpha \Delta T \tag{linear expansion}
+        \end{equation}
+    \end{minipage}
+    
+    \noindent \\ Finding heat (J) using heat specific heat c ($\frac{J}{kg \cdot K}$):
+    \begin{equation}
+        Q = cm \Delta T = cm(T_f - T_i) \tag{specific heat}
+    \end{equation}
+    \begin{equation}
+        Q = mL \tag{latent heat}
+    \end{equation}
+    \begin{equation}
+        Q = Pt \tag{power}
+    \end{equation}
+    \noindent Conversions:
+    \begin{equation}
+        1 \text{ cal/g} = 3.968 \times 10^{-3} \text{ Btu/lb }= 4.1868 \text{ J/(K $\times$ kg)} \notag
+    \end{equation}
+    \begin{equation}
+        1 \text{ atm } = 1.013 \times 10^5 \text{ Pa} \notag
+    \end{equation}
+    First Law of Thermodynamics:
+    \begin{equation}
+        \Delta E_{int} = Q - W \tag{first law}
+    \end{equation}
+    \begin{equation}
+        W = \int dW = \int_{v_i}^{v_f} p \text{ } dV \tag{work}
+    \end{equation}
+    Finding power for heat transfer across a medium:
+
+    \begin{minipage}{0.46\textwidth}
+        \begin{equation}
+            P_{cond} = \frac{Q}{t} = kA\cdot \frac{\Delta T}{L} \tag{conduction}
+        \end{equation}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \begin{equation}
+            P_{cond} = \frac{A \Delta T}{\Sigma \frac{L}{K} } \tag{conduction}
+        \end{equation}
+    \end{minipage}
+    
+    \vspace{0.4em}
+    \begin{minipage}{0.46\textwidth}
+        \begin{equation}
+            R = \frac{L}{K} \tag{resistance}
+        \end{equation}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \begin{equation}
+            \alpha = 5.67 \times 10^{-8} \tag{Stefan-Boltzmann constant}
+        \end{equation}
+    \end{minipage}
+
+    \begin{minipage}{0.46\textwidth}
+        \begin{equation}
+            P_{rad} = \alpha \epsilon A T_{obj}^4 \tag{radiation rate}
+        \end{equation}
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \begin{equation}
+            P_{abs} = \alpha \epsilon A T_{env}^4 \tag{absorption rate}
+        \end{equation}
+    \end{minipage}
+
+    \begin{equation}
+    P_{net} = P_{abs} - P_{rad} = \alpha \epsilon A (T_{env}^4 - T_{obj}^4) \tag{net power}
+    \end{equation}
+    Kinetic Theory of Gasses:
+    \begin{equation}
+        N_A = 6.02 \times 10^{23} \text{ mol}^{-1} \tag{Avogadro's number}
+    \end{equation}
+    $n$ moles, $N$ molecules:
+    \begin{equation}
+        n = \frac{N}{N_A} \tag{moles}
+    \end{equation}
+    \noindent mass of the sample M$_{\text{sam}}$ (g)
+    with the molar mass M (mol, mass of a single mole) or molecular mass $m$
+    \begin{equation}
+        n = \frac{M_{\text{sam}}}{M} = \frac{M_{\text{sam}}}{mN_A} \tag{moles}
+    \end{equation}
+    Ideal Gas Law
+    \begin{equation}
+        pV = nRT = NkT \tag{Ideal Gas Law}
+    \end{equation}
+    \begin{equation}
+        R = 8.31 J/(mol \cdot K) \tag{ideal gas constant}
+    \end{equation}
+    Where:
+    \begin{equation}
+        k = \frac{R}{N_A} = 1.38 \times 10^{-23} J/K \tag{Boltzmann constant}
+    \end{equation}
+    Kinetic energy:
+    \begin{equation}
+        K_{avg} = \frac{1}{2}mv_{rms}^2 = \frac{3}{2} kT \tag{average kinetic energy}
+    \end{equation}
+    We can find the probability of each of the speeds:
+    \begin{equation}
+        \int_{0}^{\infty} P(v) \text{ } dv = 1
+    \end{equation}
+    \begin{equation}
+        v_{avg} = \int_{0}^{\infty} v P(v) \text{ } dv = \sqrt{\frac{8RT}{\pi M}}
+    \end{equation}
+    \begin{equation}
+    (v)^2_{avg} = \int_{0}^{\infty} v^2 P(v) \text{ } dv = \frac{3RT}{ M} \Rightarrow v_{rms} = \sqrt{\frac{3RT}{M}}
+    \end{equation}
+    \begin{equation}
+        v_p = \sqrt{\frac{2RT}{M}} \tag{most probable, P(v) peak}
+    \end{equation}
+    heat using molar specific heat
+    \begin{equation}
+        Q = nC \Delta T
+    \end{equation}
+    For monatomic gasses $f = 3$, and for diatomic gasses $f = 5$.
+    \begin{equation}
+        C_v = \frac{f}{2} R
+    \end{equation}
+    \begin{equation}
+        C_p = C_v + R
+    \end{equation}
+
+        \begin{table}[h]
+            \centering
+            \renewcommand{\arraystretch}{1.5}
+            \begin{tabular}{lp{3cm}lp{6cm}l}
+                \toprule
+                \textbf{Process} & \textbf{Constant} & \textbf{Special Results} \\
+                \midrule
+                All & &  $\Delta E_{int} = Q - W$ and $\Delta E_{int} = n C_v \Delta T$\\
+                Isobaric  & p  & $Q = nC_p \Delta T$, $W = p \Delta V = nR \Delta T$\\
+                Isothermal & T  & $Q = W = nRT \ln (\frac{v_f}{v_i}) $, $\Delta E_{int} = 0$ \\
+                Adiabatic & $pV^{\gamma}$,$TV^{\gamma - 1}$ & $Q = 0$, $W = - \Delta E_{int} $ \\
+                Isochoric & V  & $Q = \Delta E_{int} = n C_v \Delta T$, $W = 0$ \\
+                \bottomrule
+            \end{tabular}
+        \end{table}
+    \noindent Notes:
+    \\ $\gamma = C_p/C_v$
+    \\ $\Delta E = 0$ for a cyclical process (completes one full cycle)
+    \\ \textbf{Entropy:}
+    \begin{equation}
+        \Delta S = \int_{i}^f \frac{1}{T} dQ =  nR\ln (\frac{V_f}{v_i}) + nC_v \ln (\frac{T_f}{T_i}) \tag{all processes}
+    \end{equation}
+    \begin{equation}
+        \Delta S = \frac{Q}{T} \tag{isothermal process}
+    \end{equation}
+    Carnot Engines:
+    \\ \noindent Note: $Q_H$ is the total $Q$ where it is increasing
+    \begin{equation}
+        W = |Q_H| - |Q_L| \tag{Carnot engine work}
+    \end{equation}
+    \begin{equation}
+                       \Delta S = \Delta S_H + \Delta S_L = \frac{|Q_H|}{T_H} - \frac{|Q_L|}{T_L} \tag{entropy, carnot engine}
+    \end{equation}
+    \begin{equation}
+        \epsilon = 1 - \frac{T_C}{T_H} = 1 - \frac{|Q_L|}{|Q_H|} \tag{carnot efficiency}
+    \end{equation}
+    \begin{equation}
+        \epsilon = \frac{\text{energy we get}}{\text{energy we used}} = \frac{|W|}{|Q_H|} \tag{efficiency, all engines}
+    \end{equation}
+
+
+
+\end{document}

@@ -25,8 +25,72 @@
 
 % Document
 \begin{document}
-    \noindent \textbf{Chapter }% Document
-    \\ \noindent \newline
+    \noindent \textbf{Chapter 20: Entropy }% Document
+    \\ \noindent \newline We have focused with reversible processes so far,
+    however most processes in the universe are irreversible.
+    Imagine microwaving a bag of popcorn, as the popcorn heats up,
+    the kernels pop, but you can never unpop those kernels.
+    We see that when an irreversible process occurs,
+    the closed system sees an increase in \textbf{entropy.}
+    Like the unpopped kernel, entropy never decreases, because in doing so,
+    it would make the irreversible process reversible.
+    We define entropy S ($J/K$) as:
+    \begin{equation}
+        \Delta S = \int_{i}^f \frac{1}{T} dQ \tag{entropy}
+    \end{equation}
+    However, there is an issue with this definition.
+    In a free expansion process, there is no heat transfer,
+    and thus the system does not pass through equilibrium states,
+    causing different parts of the gas to fill in unevenly.
+    In other words, $dQ$ is not clearly defined, making integration impossible.
+    Since entropy is a state function,
+    we determine its change by considering a
+    \textbf{reversible isothermal process}
+    that connects the same initial and final states:
+    \begin{equation}
+        \Delta S = \frac{Q}{T} \tag{entropy, isothermal process}
+    \end{equation}
+    We consider entropy a state function, since $\Delta S$ between different states only
+    depend on the initial and final conditions.
+    For an ideal gas, entropy change can be rewritten using the ideal gas law as:
+    \begin{equation}
+        \Delta S = nR\ln (\frac{V_f}{v_i}) + nC_v \ln (\frac{T_f}{T_i}) \tag{all procresses}
+    \end{equation}
+    To find the total change in entropy of a closed system,
+    we need to consider the change in heat transfer for both the object, and environment.
+    Imagine an ice cube placed in a bucket of warm water.
+    We would find the $\Delta S$ for the water reaching its melting point,
+    then for the heat energy used for the latent heat of fusion, and then for the water
+    to reach the temperature of the surrounding water.
+    Now repeat the process, considering the environment by finding $Q$ for the three parts (note that $T$ is constant).
+    Then finally subtracting the two: $\Delta S_{ice} - \Delta S_{env}$
+
+    \noindent \\Another example is an engine.
+    Focusing particularly on one ideal type, the Carnot Engine.
+    During each cycle, the working substance (such as steam or gas)
+    absorbs energy $|Q_H|$ as heat from a thermal reservoir at a constant
+    temperature $T_H$ and discharges energy $|Q_L|$ as heat to a second
+    thermal reservoir at a lower constant temperature $T_L$.
+    We find work with:
+    \begin{equation}
+        W = |Q_H| - |Q_L| \tag{Carnot engine work}
+    \end{equation}
+    In a Carnot Engine, there are two reversible energy transfers as heat.
+    The net entropy change per cycle:
+    \begin{equation}
+        \Delta S = \Delta S_H + \Delta S_L = \frac{|Q_H|}{T_H} - \frac{|Q_L|}{T_L} \tag{entropy, carnot engine}
+    \end{equation}
+    $\Delta S_H$ is positive as energy $|Q_H|$ is added to the working substance as heat,
+    while $\Delta S_L$ is negative because energy $|Q_L|$ is removed.
+    We measure the efficiency:
+    \begin{equation}
+        \epsilon = 1 - \frac{T_C}{T_H} = 1 - \frac{|Q_L|}{|Q_H|} \tag{carnot efficiency}
+    \end{equation}
+    We generalize this for any engine as:
+    \begin{equation}
+        \epsilon = \frac{\text{energy we get}}{\text{energy we used}} = \frac{|W|}{|Q_H|} \tag{efficiency, all engines}
+    \end{equation}
+
 
 
 \end{document}
