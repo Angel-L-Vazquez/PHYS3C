@@ -1,15 +1,32 @@
 %! Author = angel
-%! Date = 3/11/25
 
 % Preamble
 \documentclass[11pt]{article}
 
 % Packages
-\usepackage{amsmath}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage{pgfplots}
+\usepackage{gensymb}
+\usepackage{tikz}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz-cd}
+
+\usetikzlibrary{decorations.markings, arrows.meta}
+% Document
+\tikzset{
+    marrow/.style={decoration={markings,mark=at position 0.5 with {\arrow{#1}}}, postaction=decorate}
+}
+
+
+\newcommand{\fahrenheit}{\degree \text{F}}
 
 % Document
 \begin{document}
-
+    \noindent \textbf{Chapter }% Document
+    \\ \noindent \newline
 
 
 \end{document}
