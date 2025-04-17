@@ -29,7 +29,8 @@
 
 % Document
 \begin{document}
-    \noindent \textbf{Chapter 33: Electromagnetic Waves } \\% Document
+    \noindent \textbf{Chapter 33: Electromagnetic Waves }% Document
+    \vspace{1em}
 
     \noindent Electromagnetic waves consist of oscillating electric and magnetic fields.
     The electromagnetic wave travels perpendicular to the electric field $\vec{E} $, and magnetic field $\vec{B} $.
@@ -56,23 +57,47 @@
     \end{equation}
     We can further rewrite this in terms solely as the electric field:
     \begin{equation}
-       S = \frac{1}{c \mu_0} E^2 \tag{instant energy flow rate}
-        \end{equation}
+      \hspace{3cm} S = \frac{1}{c \mu_0} E^2 \hspace{-1cm} \tag{instant energy flow rate}
+    \end{equation}
     For finding the average power over time over a unit area, we find the intensity (W/m$^2$):
     \begin{equation}
         I = \frac{1}{c \mu_0} E_{rms}^2 \tag{intensity}
     \end{equation}
     Where $E_{rms} = \frac{E_m}{\sqrt{2}}$ is the root mean square,
     which is the average magnitude of the oscillating field.
-
-    \noindent Since the wave always travels perpendicular to the electric and magnetic field,
-    it can be modeled as:
+    The energy of a light source radiates outwards as a sphere:
+    \begin{equation}
+      I = \frac{P_s}{4 \pi r^2} \tag{intensity}
+    \end{equation}
+    When a electromagnetic wave hits a surface, a force and pressure is applied to the surface,
+    because these waves carry linear momentum.
+    The momentum applied can either be fully absorbed by the surface:
+    \begin{equation}
+      \Delta p = \frac{\Delta U}{c} \tag{total absorption}
+    \end{equation}
+    causing the surface to gain energy from the radiation,
+    or it can reflect off the surface:
+    \begin{equation}
+      \Delta p = \frac{2 \Delta U}{c} \tag{total reflection}
+    \end{equation}
+    in which the radiation is fully redirected to the path it was on.
+    Finding the radiation pressure follows a similar process:
+    \begin{equation}
+      p_r = \frac{I}{c} \tag{total absorption}
+    \end{equation}
+    \begin{equation}
+      p_r = \frac{2I}{c} \hspace{-6.4cm} \tag{total reflection back along the path} 
+    \end{equation}
+    Note that force can be found by multiplying the pressure by an area ($F = A \cdot p_r$).
+    \newpage
+    \noindent Since the electromagnetic wave always travels perpendicular to the electric and magnetic field,
+    it can be modeled as as two perpendicular \textcolor{myblue}{electric} and \textcolor{myred}{magenetic} waves:
 % Electromagnetic wave - colored
     \begin{figure}[H]
         \centering
-        \begin{minipage}{0.66\textwidth}
+        \begin{minipage}{0.56\textwidth}
             \centering
-            \begin{tikzpicture}[x=(-15:1.2), y=(90:1.0), z=(-150:1.0),
+            \begin{tikzpicture}[scale=0.7, x=(-15:1.2), y=(90:1.0), z=(-150:1.0),
                 line cap=round, line join=round,
                 axis/.style={black, thick,->},
                 vector/.style={>=stealth,->}]
@@ -117,9 +142,9 @@
 
             \end{tikzpicture}
         \end{minipage}%
-        \begin{minipage}{0.43\textwidth}
+        \begin{minipage}{0.33\textwidth}
             \centering
-            \begin{tikzpicture}
+            \begin{tikzpicture}[scale=0.8]
                 \begin{axis}[
                 axis lines=middle,
                 enlargelimits=false,
@@ -143,22 +168,117 @@
             \end{tikzpicture}
         \end{minipage}
     \end{figure}
-    \noindent Most commonly occurring waves such as light are not always two perfect electric and magnetic fields.
+
+    \noindent Most naturally occurring waves such as light do not always have perfectly defined electric and magnetic field orientations.
     Most waves from the front look like the right graph, where the fields are all oriented randomly.
     The orientation of the electric field is referred to as \textbf{polarization},
     in which the randomly polarized wave is considered unpolarized.
-    On the other hand, the wave on the left is vertically polarized.
-    We can \textbf{polarize} the light using a polarizing sheet, causing the intensity decreases:
-    \begin{equation}
+    \vspace{0.3cm}
+    
+
+ \begin{minipage}{0.25\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.5]
+
+% Incident light ray (unpolarized)
+\draw[black, thick, -{Latex[length=2mm]}] (-3,-3) -- (3,3);
+% Polarizing sheet (circle with vertical lines)
+\foreach \y in {-0.4,-0.3,...,0.4} {
+  \draw[orange!80!black, thick] (\y,-0.9) -- (\y,0.9);
+}
+
+% Polarization symbols (unpolarized - cross)
+\draw[myblue, thick, ->] (-2,-2) -- (-2,-1);
+\draw[myblue, thick, ->] (-2,-2) -- (-2,-3);
+\draw[myblue, thick, ->] (-2,-2) -- (-3,-2);
+\draw[myblue, thick, ->] (-2,-2) -- (-1,-2);
+
+% Polarized light symbol (vertical only)
+\draw[myblue, thick, ->] (2,2)-- (2,3);
+\draw[myblue, thick, ->] (2,2) -- (2,1);
+
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.7\textwidth}
+\vspace{0.1cm}
+When unpolarized light passes through a polarizing sheet, only the component of the electric field aligned with the sheet’s transmission axis is allowed through. The result is linearly polarized light.
+This causes for the intensity to drop by half, if the \textbf{incoming light is unpolarized:}
+\begin{equation}
         I = \frac{1}{2} I_0 \tag{one-half rule}
         \end{equation}
-    If the light is \textbf{already polarized,} but hits another polarizing sheet,
-    we take the polarizing direction into account:
+
+\end{minipage}
+\vspace{2em}
+
+\noindent If the light is \textbf{already polarized,} and passes through another polarizing sheet,
+    we must consider the polarization directions:
     \begin{equation}
         I = I_0 \cos^2(\theta_f - \theta_i ) \tag{cosine-squared rule}
     \end{equation}
+Although light diffracts or spreads, we can aproximate the light's behavior as a straight ray.
+We represent this beam of light as the incident ray with angle $\theta_1$.
 
-Thest
+\begin{minipage}{0.25\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=1]
 
+% Interface
+\draw[thick] (-2,0) -- (2,0);
 
+% Normal line
+\draw[dashed] (0,-1.5) -- (0,1.5);
+
+% Rays
+\draw[->, thick, myred] (-1.5,1.0) -- (0,0);       % Incident ray
+\draw[->, thick, myred] (0,0) -- (1.5,1.0);        % Reflected ray
+\draw[->, thick, myblue] (0,0) -- (0.9,-1.2);       % Refracted ray
+
+% Angle arcs (no labels)
+\draw[-] (0,0.4) arc[start angle=90,end angle=15,radius=0.3];
+\node at (0.3,0.6) {\small $\theta_1'$};  % Reflected angle label
+
+\draw[-] (0,0.4) arc[start angle=90,end angle=165,radius=0.3];
+\node at (-0.3,0.6) {\small $\theta_1$};  % Incident angle label
+
+\draw[-] (0,-0.4) arc[start angle=270,end angle=315,radius=0.3];
+\node at (0.2,-0.6) {\small $\theta_2$}; % Refracted angle label
+
+\end{tikzpicture}
+
+\end{center}
+
+\end{minipage}
+\hfill
+\begin{minipage}{0.65\textwidth}
+  \vspace{0.3cm}
+  The incident ray can reflect off of a surface, redirecting its path resulting in \textbf{reflection:}
+\begin{equation}
+  \theta_1 = \theta_1 ' \tag{reflection}
+\end{equation}
+However, the beam of light can through a surface such as glass, forming a new angle, known as \textbf{refraction:}
+\begin{equation}
+  n_1 \sin \theta_1 = n_2 \sin \theta_2 \tag{Snell's Law}
+\end{equation}
+\end{minipage}
+\vspace{1em}
+
+\noindent The values $n$ are the index of refraction which refers to how much a medium slows down light,
+giving the equation $n = c /v$ where $c$ is the speed of light in the medium.
+
+\vspace{1em} 
+\noindent Depending on the angle that the incident ray hits a surface, the refraction angle will be 90\degree,
+meaning that no light passed through, and all of the light reflected back.
+Total internal reflection occurs for all angles equal to greater than the \textbf{critical angle:}
+\begin{equation}
+  \theta_c = \sin^{-1}(\frac{n_2}{n_1}) \tag{critical angle}
+\end{equation}
+
+\noindent If an unpolarized light hits a surface at the \textbf{Brewster angle} $\theta_B$,
+the reflected light will be fully polarized, and the refracted ray will be partially polarized.
+\begin{equation}
+\theta_B = \tan^{-1}(\frac{n_2}{n_1}) \tag{Brewster angle}
+\end{equation}
 \end{document}
+
+
