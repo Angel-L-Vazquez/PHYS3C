@@ -1,0 +1,44 @@
+%! Author = angel
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage{pgfplots}
+\usepackage{gensymb}
+\usepackage{tikz}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz-cd}
+
+\usetikzlibrary{decorations.markings, arrows.meta}
+% Document
+\tikzset{
+    marrow/.style={decoration={markings,mark=at position 0.5 with {\arrow{#1}}}, postaction=decorate}
+}
+
+
+\newcommand{\fahrenheit}{\degree \text{F}}
+
+% Document
+\begin{document}
+    \noindent \textbf{Exam 3 Cheat Sheet}% Document
+    \\ \noindent \newline
+    Speed of light in a vacuum:
+      \begin{equation}
+        c  =  3.0 \times 10^8 \text{ m/s} \tag{in a vacuum}
+    \end{equation}
+    Speed of light where $n$ is the index of refraction:
+    \begin{equation}
+      v = \frac{c}{n} \tag{speed of light}
+    \end{equation}
+    Law of refraction:
+\begin{equation}
+  n_1 \sin \theta_1 = n_2 \sin \theta_2 \tag{Snell's Law}
+\end{equation}
+
+
+\end{document}
