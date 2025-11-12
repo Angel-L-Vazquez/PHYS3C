@@ -1,0 +1,64 @@
+%! Author = angel
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage{pgfplots}
+\usepackage{gensymb}
+\usepackage{tikz}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz-cd}
+
+\usetikzlibrary{decorations.markings, arrows.meta}
+% Document
+\tikzset{
+    marrow/.style={decoration={markings,mark=at position 0.5 with {\arrow{#1}}}, postaction=decorate}
+}
+
+
+\newcommand{\fahrenheit}{\degree \text{F}}
+
+% Document
+\begin{document}
+    \noindent \textbf{Chapter 37: Relativity}
+
+    \vspace{1em}
+    \noindent Space and time are entangled,
+    in which the time between two events rely on the distance between the two.
+    Events are generally defined as something that happens, where we can assign three space coordinates ($x,y,z$), one time coordinate.
+    Inertial reference frames are the perspectives we take when observing an object that is at rest or moving with constant speed.
+    An observer, in an inertial reference frame, can assign an event spacetime coordinates since space and time are entangled.\\
+    
+    \noindent \vspace{1em}
+    Relativity measures how space and time are entangled, following the two postulates:
+    \begin{enumerate}
+      \item \textbf{The Relativity Postulate:}
+        The laws of Physics apply to all observers regardless of inertial reference frame.
+      \item \textbf{The Speed of Light Postulate:}
+        The speed of light in  a vacuum will always be $c$ regardless of direction and inertial reference frame.
+    \end{enumerate}    
+    We define the speed of light $c$ (m/s) as:
+    \begin{equation}
+      c = 299,792,458 \text{ m/s } = 3.00 \times 10^8 \text{ m/s} \tag{speed of light}
+    \end{equation}
+    We can also call this \textit{ultimate speed} as the more kinetic energy speed a particle has, the closer it will get to this boundary.
+    \vspace{1em}
+
+    \noindent Assigning spacetime coordinates to an event allows us to see how time is relative.
+    Let's say there was a firework exploding in the sky a mile away, and you turn on your phone both at exactly 8:00 PM.
+    From your own observation, you notice your phone turn on first, then the firework expolsion.
+    As the light from the firework has to travel longer than the phone in your hand,
+    these two events seem to happen at different types from your inertial frame of reference.
+    
+    \vspace{1em}
+    \noindent Now, lets take a look as an observer on a plane traveling at the exact midpoint of the two events.
+    In this case, the observer notices the firework and the orignial observer's phone at the same time,
+    as the distances between the observer and distances changed.
+    The new observer sees the event happen \textit{simultaneously}.
+    We find that simultaneity is relative, not absolute.
+\end{document}

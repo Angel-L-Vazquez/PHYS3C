@@ -1,0 +1,57 @@
+%! Author = angel
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage{pgfplots}
+\usepackage{gensymb}
+\usepackage{tikz}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{fancyhdr}
+\pgfplotsset{compat=1.18}
+\usepackage{tikz-cd}
+\usepackage{stmaryrd}
+
+\usetikzlibrary{decorations.markings, arrows.meta}
+% Document
+\tikzset{
+    marrow/.style={decoration={markings,mark=at position 0.5 with {\arrow{#1}}}, postaction=decorate}
+}
+
+
+\newcommand{\fahrenheit}{\degree \text{F}}
+
+% Document
+\begin{document}
+    \noindent \textbf{Final }% Document
+    \\ \noindent \newline
+    \begin{equation}
+        c = 3 \times 10^8 \tag{light}
+    \end{equation}
+    \begin{equation}
+        \beta = \frac{v}{c} \notag
+    \end{equation}
+    \begin{equation}
+        \Delta t =\gamma \Delta t_0 = \frac{\Delta t_0}{\sqrt{1- \beta^2}} \tag{time dilation}
+    \end{equation}
+    $\gamma$ measures the factor of time dilation/length shrink
+    \begin{equation}
+        \Delta L = \frac{L_0}{\gamma}=L_0 \sqrt{1 - \beta^2} \tag{length contraction}
+    \end{equation}
+    \begin{equation}
+        u = \frac{u' + v}{1 + u'(\frac{v}{c^2})} \notag
+    \end{equation}
+Where $u'$ is the velocity of an object from the moving frame.
+    $v$ is the velocity of the stationary frame.
+    $u$ is the velocity of the object in respect to the stationary frame.
+\begin{equation}
+    f = f_0 \sqrt {\frac{1 \pm \frac{v}{c}}{1 \mp \frac{v}{c}}} \tag{Doppler Effect}
+\end{equation}
+    \begin{equation}
+        v = \frac{\Delta \lambda}{\lambda} c \tag{color shift}
+    \end{equation}
+
+\end{document}
